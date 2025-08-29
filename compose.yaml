@@ -5,13 +5,12 @@ services:
     stdin_open: true
     working_dir: /app
     volumes:
-      - ./src:/app
+      - ./src/chatapp:/app
       - node_modules-vol:/app/node_modules
     ports:
-      - "5173:5173"
+      - 3000:3000
     command: >
-      bash -c "npm i &&
-      npm run dev -- --host"
+      bash -c "npm i && npm start"
 
 volumes:
   node_modules-vol:
